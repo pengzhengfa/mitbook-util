@@ -1,4 +1,7 @@
 ```shell script
+此插件归本人版权所有,仅供学习,未经同意,请勿用于企业开发
+```
+```shell script
 redis多功能插件(对象缓存+分布式锁+注解限流)
 ```
 ```shell script
@@ -11,7 +14,7 @@ private RedisUtil redisUtil;
 二.构建缓存key前缀,PrefixKey.with(int expireSeconds,String prefix)
 1.expireSeconds:过期时间(单位:秒)
 2.prefix:key前缀
- PrefixKey pk = PrefixKey.with(3600, "jesper");
+ PrefixKey pk = PrefixKey.with(3600, "pengzhengfa");
 
 三.添加对象缓存,set(KeyPrefix prefix, String key, T value, boolean isRandomSeconds) 
 1.prefix:前缀对象
@@ -50,4 +53,6 @@ public Result<Integer> list(Model model, User user, @RequestParam("goodsId") lon
 	return Result.success(0);//排队中
 
 }
+
+八.此插件还可以支持redis集群,只需要把application.properties里面的配置文件修改下就可以啦
 ```
